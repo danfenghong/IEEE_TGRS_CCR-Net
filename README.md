@@ -40,6 +40,9 @@ Google drive: https://drive.google.com/file/d/1wjSQyYuJ5uEjxakszwUa2DLyVAg3M78X/
 
 Baiduyun: https://pan.baidu.com/s/1voUL8vqc-qVvnjquxbCXcQ (access code: urna)
 
+Once the data are ready, you can directly run the MuCNN_train.py for the model training.
+
+Then, the MuCNN_test.py can be used for generating the whole classification map.
 
 If you encounter the bugs while using this code, please do not hesitate to contact us.
 
