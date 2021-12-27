@@ -36,18 +36,10 @@ How to use it?
 ---------------------
 To begin with, the data should be imported, e.g., the used Houston2013 (including hyperspectral and LiDAR data). Due to their too large file size, you can download them from the following links of google drive or baiduyun:
 
-Google drive: https://drive.google.com/file/d/1vno8vQxCXgr7xk-Nez9CVbJmjkDMBCbe/view?usp=sharing
+Google drive: https://drive.google.com/file/d/1wjSQyYuJ5uEjxakszwUa2DLyVAg3M78X/view?usp=sharing
 
-Baiduyun: https://pan.baidu.com/s/1ug_tKyrbwg_CzHGpB2YK2A (access code: hfw3)
+Baiduyun: https://pan.baidu.com/s/1voUL8vqc-qVvnjquxbCXcQ (access code: urna)
 
-
-**If you are interested in LCZ classification datasets, please download them from here: [Baiduyun](https://pan.baidu.com/s/1dYkaUm4JTjOWdtx79RsB6w) with access code (gkli)!**
-
-**The images are normalized (0-1) in a band-wise fashion. In our case, we use the matlab function: mat2gray.**
-
-**The multimodal image resolution might be different, e.g., in LCZ. We use the matlab function: imresize.**
-
-If you want to run the code in your own data, you can accordingly change the input (e.g., data, labels) and tune the parameters.
 
 If you encounter the bugs while using this code, please do not hesitate to contact us.
 
