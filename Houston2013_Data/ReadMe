@@ -1,1 +1,9 @@
 
+In the file, you have to put the Houston2013 data in the form of .mat, including hyperspectral and LiDAR data.
+
+Or you can also download them from 
+Google drive:
+or
+BaiduYun:
+
+and directly put them in the fold.
