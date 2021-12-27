@@ -6,7 +6,7 @@ ___________
 
 The code in this toolbox implements the ["Convolutional Neural Networks for Multimodal Remote Sensing Data Classification"](https://ieeexplore.ieee.org/abstract/document/9598903). More specifically, it is detailed as follow.
 
-![alt text](./Motivation.png)
+![alt text](./CCR.png)
 
 
 Citation
