@@ -61,4 +61,4 @@ Contact Information:
 --------------------
 
 Danfeng Hong: hongdf@aircas.ac.cn<br>
-Danfeng Hong is with the Key Laboratory of Digital Earth Science, Aerospace Information Research Institute, Chinese Academy of Sciences, Beijing 100094, China.
+Danfeng Hong is with the Key Laboratory of Computational Optical Imaging Technology, Aerospace Information Research Institute, Chinese Academy of Sciences, Beijing 100094, China.
