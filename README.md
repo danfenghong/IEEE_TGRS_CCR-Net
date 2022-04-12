@@ -14,16 +14,16 @@ Citation
 
 **Please kindly cite the papers if this code is useful and helpful for your research.**
 
-Xin Wu, Danfeng Hong, Jocelyn Chanussot. Convolutional Neural Networks for Multimodal Remote Sensing Data Classification, IEEE Transactions on Geoscience and Remote Sensing, 2021, DOI: 10.1109/TGRS.2021.3124913. 
+Xin Wu, Danfeng Hong, Jocelyn Chanussot. Convolutional Neural Networks for Multimodal Remote Sensing Data Classification, IEEE Transactions on Geoscience and Remote Sensing, 2022, vol. 60, pp. 1-10, DOI: 10.1109/TGRS.2021.3124913. 
 
-     @article{wu2021convolutional,
+     @article{wu2022convolutional,
       title     = {Convolutional Neural Networks for Multimodal Remote Sensing Data Classification},
       author    = {X. Wu and D. Hong and J. Chanussot},
       journal   = {IEEE Trans. Geosci. Remote Sens.}, 
-      volume    = {},
+      volume    = {60},
       number    = {},
-      pages     = {},
-      year      = {2021},
+      pages     = {1-10},
+      year      = {2022},
       note      = {DOI: 10.1109/TGRS.2021.3124913},
       publisher = {IEEE}
      }
