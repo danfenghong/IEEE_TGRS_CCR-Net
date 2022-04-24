@@ -12,8 +12,8 @@ import scipy.io as scio
 import scipy.io as sio
 from tf_utils import random_mini_batches_standardtwoModality, convert_to_one_hot
 from tensorflow.python.framework import ops
-#from tfdeterminism import patch
-#patch() %If you would like to get a fixed result in each running the network, you can open it.
+from tfdeterminism import patch
+patch() %If you would like to get a randome result in each running the network, you can close it.
 
 def create_placeholders(n_x1, n_x2, n_y):
    
@@ -176,14 +176,14 @@ def mynetwork(x1, x2, parameters, isTraining):
                + tf.nn.l2_loss(parameters['x_en_w1']) + tf.nn.l2_loss(parameters['x_en_w2']) + tf.nn.l2_loss(parameters['x_en_w3']) + tf.nn.l2_loss(parameters['x_en_w4'])\
                + tf.nn.l2_loss(parameters['x_de_w1']) + tf.nn.l2_loss(parameters['x_de_w2']) + tf.nn.l2_loss(parameters['x_de_w3'])
     
-    return x_en_z4, joint_layer_re, x1_de_a3, joint_layer_re1, x1_de_a2, joint_layer_re2, x1_de_a1, l2_loss
+    return x_en_z4, joint_layer_re, x1_de_a3, l2_loss
 
-def mynetwork_optimaization(y_es, y_re, r1, r2, r11, r22, r111, r222, l2_loss, reg, learning_rate, global_step):
+def mynetwork_optimaization(y_es, y_re, r1, r2, l2_loss, reg, learning_rate, global_step):
 
     with tf.name_scope("cost"):
         
          cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits = y_es, labels = y_re)) + reg * l2_loss\
-                + 0.1 * tf.reduce_mean(tf.square(r1 - r2)) + 0.1 * tf.reduce_mean(tf.square(r11 - r22)) + 0.1 * tf.reduce_mean(tf.square(r111 - r222))
+                + 0.1 * tf.reduce_mean(tf.square(r1 - r2))
 
     with tf.name_scope("optimization"):
          update_ops = tf.get_collection(tf.GraphKeys.UPDATE_OPS)
@@ -217,14 +217,14 @@ def train_mynetwork(x1_train_set, x2_train_set, x1_test_set, x2_test_set, y_trai
     
     with tf.name_scope("network"):
 
-         joint_layer, r1, r2, r11, r22, r111, r222, l2_loss = mynetwork(x1, x2, parameters, isTraining)
+         joint_layer, r1, r2, l2_loss = mynetwork(x1, x2, parameters, isTraining)
          
     global_step = tf.Variable(0, trainable = False)
     learning_rate = tf.train.exponential_decay(learning_rate_base, global_step, 30 * m/minibatch_size, 0.5, staircase = True)
     #learning_rate = learning_rate_base
     with tf.name_scope("optimization"):
          # network optimization
-         cost, optimizer = mynetwork_optimaization(joint_layer, y, r1, r2, r11, r22, r111, r222, l2_loss, beta_reg, learning_rate, global_step)
+         cost, optimizer = mynetwork_optimaization(joint_layer, y, r1, r2, l2_loss, beta_reg, learning_rate, global_step)
 
     with tf.name_scope("metrics"):
          # Calculate the correct predictions
